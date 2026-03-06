@@ -1,9 +1,11 @@
 import './ResultCard.css'
 
 function parseAnswer(answer) {
-  // Split into the two named sections
   const interactionMatch = answer.match(
-    /\*\*What happens when both are taken together:\*\*\s*([\s\S]*?)(?=\*\*What can be done instead:|$)/i
+    /\*\*What happens when both are taken together:\*\*\s*([\s\S]*?)(?=\*\*What happens in the body:|$)/i
+  )
+  const bodyMatch = answer.match(
+    /\*\*What happens in the body:\*\*\s*([\s\S]*?)(?=\*\*What can be done instead:|$)/i
   )
   const alternativesMatch = answer.match(
     /\*\*What can be done instead:\*\*\s*([\s\S]*?)(?=⚠|$)/i
@@ -20,6 +22,7 @@ function parseAnswer(answer) {
 
   return {
     interaction: bullets(interactionMatch?.[1]),
+    body: bullets(bodyMatch?.[1]),
     alternatives: bullets(alternativesMatch?.[1]),
     disclaimer,
     raw: answer,
