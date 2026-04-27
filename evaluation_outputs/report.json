@@ -1,0 +1,140 @@
+{
+  "n_cases": 12,
+  "detector": "rag_llm_response_parser",
+  "api_base": "http://localhost:8000",
+  "top_k": 5,
+  "confusion_matrix": {
+    "TP": 2,
+    "FP": 0,
+    "TN": 6,
+    "FN": 4
+  },
+  "metrics": {
+    "precision": 1.0,
+    "recall": 0.333333,
+    "f1": 0.5,
+    "accuracy": 0.666667
+  },
+  "details": [
+    {
+      "drug1": "Warfarin",
+      "drug2": "Aspirin",
+      "truth": true,
+      "pred": false,
+      "support_score": 0.55,
+      "support_rule": "no_interaction_cues_in_together_section",
+      "reason": "Known increased bleeding risk",
+      "answer_excerpt": "**What happens when both are taken together:**\n- Mean mediastinal blood loss was significantly greater in patients taking aspirin and in patients taking Coumadin (warfarin sodium) within 7 days of surgery compared to control subjects.\n- Pat..."
+    },
+    {
+      "drug1": "Simvastatin",
+      "drug2": "Amlodipine",
+      "truth": true,
+      "pred": true,
+      "support_score": 0.7,
+      "support_rule": "together_section_cues=1",
+      "reason": "Known statin level increase risk",
+      "answer_excerpt": "**What happens when both are taken together:**\n- The serum concentration of Amlodipine can be increased when it is combined with Simvastatin.\n\n**What happens in the body:**\n- The knowledge base does not describe the specific body effects fo..."
+    },
+    {
+      "drug1": "Sertraline",
+      "drug2": "Ibuprofen",
+      "truth": true,
+      "pred": false,
+      "support_score": 0.55,
+      "support_rule": "no_interaction_cues_in_together_section",
+      "reason": "Known GI bleeding risk",
+      "answer_excerpt": "**What happens when both are taken together:**\n- The metabolism of Sertraline can be decreased when combined with Ibuprofen.\n\n**What happens in the body:**\n- The knowledge base does not describe the specific body effects for this combinatio..."
+    },
+    {
+      "drug1": "Clopidogrel",
+      "drug2": "Omeprazole",
+      "truth": true,
+      "pred": true,
+      "support_score": 0.8,
+      "support_rule": "together_section_cues=3",
+      "reason": "Known reduced antiplatelet efficacy",
+      "answer_excerpt": "**What happens when both are taken together:**\n- Omeprazole may decrease the antiplatelet activities of Clopidogrel.\n- The serum concentration of the active metabolites of Clopidogrel can be reduced when Clopidogrel is used in combination w..."
+    },
+    {
+      "drug1": "Metformin",
+      "drug2": "Ciprofloxacin",
+      "truth": true,
+      "pred": false,
+      "support_score": 0.95,
+      "support_rule": "hard_negative_marker",
+      "reason": "Known blood glucose effect risk",
+      "answer_excerpt": "The knowledge base does not contain enough information about this combination.\n\u26a0\ufe0f Consult a licensed healthcare professional before making any medication changes."
+    },
+    {
+      "drug1": "Warfarin",
+      "drug2": "Rifampicin",
+      "truth": true,
+      "pred": false,
+      "support_score": 0.55,
+      "support_rule": "no_interaction_cues_in_together_section",
+      "reason": "Known warfarin concentration reduction",
+      "answer_excerpt": "**What happens when both are taken together:**\n- The metabolism of Warfarin can be increased when combined with Rifampicin.\n\n**What happens in the body:**\n- The knowledge base does not describe the specific body effects for this combination..."
+    },
+    {
+      "drug1": "Acetaminophen",
+      "drug2": "Loratadine",
+      "truth": false,
+      "pred": false,
+      "support_score": 0.95,
+      "support_rule": "hard_negative_marker",
+      "reason": "Control pair",
+      "answer_excerpt": "The knowledge base does not contain enough information about this combination.\n\u26a0\ufe0f Consult a licensed healthcare professional before making any medication changes."
+    },
+    {
+      "drug1": "Amoxicillin",
+      "drug2": "Cetirizine",
+      "truth": false,
+      "pred": false,
+      "support_score": 0.95,
+      "support_rule": "hard_negative_marker",
+      "reason": "Control pair",
+      "answer_excerpt": "**What happens when both are taken together:**\nThe knowledge base does not contain enough information about this combination.\n\n**What happens in the body:**\nThe knowledge base does not describe the specific body effects for this combination..."
+    },
+    {
+      "drug1": "Vitamin C",
+      "drug2": "Loratadine",
+      "truth": false,
+      "pred": false,
+      "support_score": 0.95,
+      "support_rule": "hard_negative_marker",
+      "reason": "Control pair",
+      "answer_excerpt": "The knowledge base does not contain enough information about this combination.\n\u26a0\ufe0f Consult a licensed healthcare professional before making any medication changes."
+    },
+    {
+      "drug1": "Saline",
+      "drug2": "Paracetamol",
+      "truth": false,
+      "pred": false,
+      "support_score": 0.95,
+      "support_rule": "hard_negative_marker",
+      "reason": "Control pair",
+      "answer_excerpt": "The knowledge base does not contain enough information about this combination.\n\u26a0\ufe0f Consult a licensed healthcare professional before making any medication changes."
+    },
+    {
+      "drug1": "Calcium Carbonate",
+      "drug2": "Topical Aloe Vera",
+      "truth": false,
+      "pred": false,
+      "support_score": 0.95,
+      "support_rule": "hard_negative_marker",
+      "reason": "Control pair",
+      "answer_excerpt": "The knowledge base does not contain enough information about this combination.\n\u26a0\ufe0f Consult a licensed healthcare professional before making any medication changes."
+    },
+    {
+      "drug1": "Normal Saline",
+      "drug2": "Cetirizine",
+      "truth": false,
+      "pred": false,
+      "support_score": 0.95,
+      "support_rule": "hard_negative_marker",
+      "reason": "Control pair",
+      "answer_excerpt": "The knowledge base does not contain enough information about this combination.\n\u26a0\ufe0f Consult a licensed healthcare professional before making any medication changes."
+    }
+  ]
+}

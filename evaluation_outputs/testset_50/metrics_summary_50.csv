@@ -1,0 +1,5 @@
+metric,value
+precision,1.0
+recall,0.866667
+f1,0.928571
+accuracy,0.92

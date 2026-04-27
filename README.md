@@ -14,7 +14,6 @@ A Retrieval-Augmented Generation (RAG) system for drug-drug interaction (DDI) lo
 | Backend | FastAPI + Uvicorn |
 | Frontend | React 18 + Vite |
 
----
 
 ## Knowledge Base
 
